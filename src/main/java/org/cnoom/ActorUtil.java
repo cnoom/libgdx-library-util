@@ -3,6 +3,7 @@ package org.cnoom;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Align;
 
+import static com.badlogic.gdx.utils.Align.center;
 import static org.cnoom.AlignUtil.getAlignValueHorizontal;
 import static org.cnoom.AlignUtil.getAlignValueVertical;
 
@@ -39,6 +40,14 @@ public class ActorUtil {
 
     public static void align(Actor actor, int Align) {
         align(actor, Align, Align, 0, 0);
+    }
+
+    public static void align(Actor actor, Actor reference) {
+        align(actor, reference, center);
+    }
+
+    public static void align(Actor actor, Actor reference, float sx, float sy) {
+        align(actor, reference, center, sx, sy);
     }
 
     public static void resizeByScale(Actor actor, float scale, int align) {
