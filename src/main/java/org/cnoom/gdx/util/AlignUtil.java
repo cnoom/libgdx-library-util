@@ -1,4 +1,4 @@
-package org.cnoom;
+package org.cnoom.gdx.util;
 
 
 import com.badlogic.gdx.utils.Align;

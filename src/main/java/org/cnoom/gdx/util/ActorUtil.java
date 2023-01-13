@@ -1,11 +1,11 @@
-package org.cnoom;
+package org.cnoom.gdx.util;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Align;
 
 import static com.badlogic.gdx.utils.Align.center;
-import static org.cnoom.AlignUtil.getAlignValueHorizontal;
-import static org.cnoom.AlignUtil.getAlignValueVertical;
+import static org.cnoom.gdx.util.AlignUtil.getAlignValueHorizontal;
+import static org.cnoom.gdx.util.AlignUtil.getAlignValueVertical;
 
 public class ActorUtil {
 
@@ -42,12 +42,12 @@ public class ActorUtil {
         align(actor, Align, Align, 0, 0);
     }
 
-    public static void align(Actor actor, Actor reference) {
-        align(actor, reference, center);
+    public static void align(Actor centerActor, Actor reference) {
+        align(centerActor, reference, center);
     }
 
-    public static void align(Actor actor, Actor reference, float sx, float sy) {
-        align(actor, reference, center, sx, sy);
+    public static void align(Actor centerActor, Actor reference, float sx, float sy) {
+        align(centerActor, reference, center, sx, sy);
     }
 
     public static void resizeByScale(Actor actor, float scale, int align) {
@@ -65,6 +65,10 @@ public class ActorUtil {
 
     public static void resizeByHeight(Actor actor, float height) {
         resizeByScale(actor, height / actor.getHeight());
+    }
+
+    public static void reSizeByReference(Actor actor,Actor reference){
+        actor.setSize(reference.getWidth(),reference.getHeight());
     }
 
     public static void resizeByWidthOrHeight(Actor actor, float width, float height) {
