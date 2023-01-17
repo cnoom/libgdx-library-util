@@ -9,6 +9,9 @@ import static com.badlogic.gdx.utils.Align.center;
 public class GroupUtil {
     private Group group;
 
+    /**
+     * 指定特定组进行添加
+     */
     public GroupUtil(Group group) {
         this.group = group;
     }
@@ -104,7 +107,7 @@ public class GroupUtil {
     /**
      * 按顺序向组中添加多个演员
      */
-    public void addActors( int align, Actor... actors) {
+    public void addActors(int align, Actor... actors) {
         AddActorUtil.addActors(group, align, actors);
     }
 
@@ -112,19 +115,19 @@ public class GroupUtil {
      * @param groupAlign 组的的位标志常量
      * @param actorAlign 演员的位标志常量
      */
-    public void addActor( Actor actor, int groupAlign, int actorAlign, float sx, float sy) {
+    public void addActor(Actor actor, int groupAlign, int actorAlign, float sx, float sy) {
         AddActorUtil.addActor(group, actor, groupAlign, actorAlign, sx, sy);
     }
 
-    public void addActor( Actor actor, int groupAlign, int actorAlign) {
+    public void addActor(Actor actor, int groupAlign, int actorAlign) {
         addActor(group, actor, groupAlign, actorAlign, 0, 0);
     }
 
-    public void addActor( Actor actor, int align, float sx, float sy) {
+    public void addActor(Actor actor, int align, float sx, float sy) {
         addActor(group, actor, align, align, sx, sy);
     }
 
-    public void addActor( Actor actor, int align) {
+    public void addActor(Actor actor, int align) {
         addActor(group, actor, align, align, 0, 0);
     }
 
@@ -132,7 +135,7 @@ public class GroupUtil {
         addActor(group, centerActor, center);
     }
 
-    public void addActor( Actor centerActor, float sx, float sy) {
+    public void addActor(Actor centerActor, float sx, float sy) {
         addActor(group, centerActor, center, sx, sy);
     }
 
@@ -144,11 +147,11 @@ public class GroupUtil {
         layout(group, actor, groupAlign, actorAlign, 0, 0);
     }
 
-    public void layout( Actor actor, int align, float sx, float sy) {
+    public void layout(Actor actor, int align, float sx, float sy) {
         layout(group, actor, align, align, sx, sy);
     }
 
-    public void layout( Actor actor, int align) {
+    public void layout(Actor actor, int align) {
         layout(group, actor, align, align, 0, 0);
     }
 

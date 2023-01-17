@@ -67,8 +67,8 @@ public class ActorUtil {
         resizeByScale(actor, height / actor.getHeight());
     }
 
-    public static void reSizeByReference(Actor actor,Actor reference){
-        actor.setSize(reference.getWidth(),reference.getHeight());
+    public static void reSizeByReference(Actor actor, Actor reference) {
+        actor.setSize(reference.getWidth(), reference.getHeight());
     }
 
     public static void resizeByWidthOrHeight(Actor actor, float width, float height) {

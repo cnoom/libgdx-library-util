@@ -1,4 +1,4 @@
-package org.cnoom.gdx.Actor;
+package org.cnoom.gdx.actor;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
@@ -9,14 +9,15 @@ public class ShaderGroup extends Group {
     ShaderProgram shaderProgram;
 
     boolean isValid = false;
-    ShaderGroup(ShaderProgram shaderProgram){
+
+    ShaderGroup(ShaderProgram shaderProgram) {
         this.shaderProgram = shaderProgram;
     }
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        if(!isValid){
-            super.draw(batch,parentAlpha);
+        if (!isValid) {
+            super.draw(batch, parentAlpha);
             return;
         }
         ShaderProgram batchShader = batch.getShader();
