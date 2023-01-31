@@ -50,29 +50,32 @@ public class ActorUtil {
         align(centerActor, reference, center, sx, sy);
     }
 
-    public static void resizeByScale(Actor actor, float scale, int align) {
+    public static Actor resizeByScale(Actor actor, float scale, int align) {
         actor.setOrigin(align);
         actor.setSize(actor.getWidth() * scale, actor.getHeight() * scale);
+        return actor;
     }
 
-    public static void resizeByScale(Actor actor, float scale) {
-        resizeByScale(actor, scale, Align.bottomLeft);
+    public static Actor resizeByScale(Actor actor, float scale) {
+        return resizeByScale(actor, scale, Align.bottomLeft);
     }
 
-    public static void resizeByWidth(Actor actor, float width) {
-        resizeByScale(actor, width / actor.getWidth());
+    public static Actor resizeByWidth(Actor actor, float width) {
+        return resizeByScale(actor, width / actor.getWidth());
     }
 
-    public static void resizeByHeight(Actor actor, float height) {
-        resizeByScale(actor, height / actor.getHeight());
+    public static Actor resizeByHeight(Actor actor, float height) {
+        return resizeByScale(actor, height / actor.getHeight());
     }
 
-    public static void reSizeByReference(Actor actor, Actor reference) {
+    public static Actor reSizeByReference(Actor actor, Actor reference) {
         actor.setSize(reference.getWidth(), reference.getHeight());
+        return actor;
     }
 
-    public static void resizeByWidthOrHeight(Actor actor, float width, float height) {
+    public static Actor resizeByWidthOrHeight(Actor actor, float width, float height) {
         if (actor.getWidth() >= actor.getHeight()) resizeByWidth(actor, width);
         else resizeByHeight(actor, height);
+        return actor;
     }
 }
