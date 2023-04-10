@@ -188,7 +188,7 @@ public class GroupUtil {
 
         public static Actor getActorByName(Group g, String name) {
             for (Actor child : g.getChildren()) {
-                if (child.getName().equals(name)) {
+                if (name.equals(child.getName())) {
                     return child;
                 }
             }
