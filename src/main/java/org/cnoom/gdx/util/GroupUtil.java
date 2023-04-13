@@ -84,9 +84,7 @@ public class GroupUtil {
     public static void layout(Group g, Actor actor, int align) {
         layout(g, actor, align, align, 0, 0);
     }
-    public static Actor getActorByName(Group g,String name){
-        return GroupUtils.getActorByName(g,name);
-    }
+
     public void setGroup(Group group) {
         this.group = group;
     }
@@ -158,10 +156,6 @@ public class GroupUtil {
         layout(group, actor, align, align, 0, 0);
     }
 
-    public Actor getActorByName(String name){
-        return getActorByName(group,name);
-    }
-
     private static class AddActorUtil {
         public static void addActorAndSize(Group g, Actor a) {
             g.addActor(a);
@@ -184,15 +178,6 @@ public class GroupUtil {
     private static class GroupUtils {
         public static void layout(Group g, Actor actor, int groupAlign, int actorAlign, float sx, float sy) {
             actor.setPosition(AlignUtil.getAlignValueHorizontal(groupAlign) * g.getWidth() + sx, AlignUtil.getAlignValueVertical(groupAlign) * g.getHeight() + sy, actorAlign);
-        }
-
-        public static Actor getActorByName(Group g, String name) {
-            for (Actor child : g.getChildren()) {
-                if (name.equals(child.getName())) {
-                    return child;
-                }
-            }
-            return null;
         }
     }
 }

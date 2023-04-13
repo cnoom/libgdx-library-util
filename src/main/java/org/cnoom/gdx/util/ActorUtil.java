@@ -1,5 +1,6 @@
 package org.cnoom.gdx.util;
 
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Align;
 
@@ -77,5 +78,12 @@ public class ActorUtil {
         if (actor.getWidth() >= actor.getHeight()) resizeByWidth(actor, width);
         else resizeByHeight(actor, height);
         return actor;
+    }
+
+    public static Vector2 getSelfPos(Actor actor, int align) {
+        return new Vector2(
+                AlignUtil.getAlignValueHorizontal(align) * actor.getWidth(),
+                AlignUtil.getAlignValueVertical(align) * actor.getHeight()
+        );
     }
 }
