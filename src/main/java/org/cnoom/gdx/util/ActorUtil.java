@@ -51,9 +51,15 @@ public class ActorUtil {
         align(centerActor, reference, center, sx, sy);
     }
 
+    /**
+     * 根据临时的origin修改actor大小
+     */
     public static Actor resizeByScale(Actor actor, float scale, int align) {
+        float ox = actor.getOriginX();
+        float oy = actor.getOriginY();
         actor.setOrigin(align);
         actor.setSize(actor.getWidth() * scale, actor.getHeight() * scale);
+        actor.setOrigin(ox,oy);
         return actor;
     }
 
