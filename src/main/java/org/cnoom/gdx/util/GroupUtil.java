@@ -7,13 +7,17 @@ import com.badlogic.gdx.utils.Align;
 import static com.badlogic.gdx.utils.Align.center;
 
 public class GroupUtil {
+    /**
+     * 进行操作的组
+     */
     private Group group;
 
-    /**
-     * 指定特定组进行添加
-     */
     public GroupUtil(Group group) {
         this.group = group;
+    }
+
+    public Group getGroup() {
+        return group;
     }
 
     /**
